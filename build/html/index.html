@@ -1,8 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/tether.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles/homepage.css">
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/homepage.js"></script>
 </head>
 <body>
-	<h1>HELLO WORLD</h1>
+	<nav class="navbar navbar-default navbar-main navbar-fixed-top"   id="navigation-container">
+  		<div class="container-fluid">
+    		<div class="navbar-header page-scroll" >
+      			<a class="navbar-brand page-scroll" id="nav-title" href="#">Dylan the Lion</a>
+    		</div>
+    		<ul class="nav navbar-nav" id="navbar-items">
+      			<li class="active"><a href="#">Home</a></li>
+      			<li><a class="nav-link" href="#">Page 1</a></li>
+      			<li><a class="nav-link" href="#">Page 2</a></li>
+      			<li><a class="nav-link" href="#">Page 3</a></li>
+    		</ul>
+  		</div>
+	</nav>
+	<div class="banner-image-container fill"  >
+   		<div class="fill">
+			<img src="assets/BABYWU.jpg" id="banner-image" class="img-responsive">
+   		</div>
+	</div>
+	<!-- content -->
+	<div class="container">
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<p class="main-text-bold">Hi! My name is Dylan Belcher. I'm a .NET and iOS developer, with some experience in node JS and AWS hosting. I've built this site, to use as a repository for useful bits of code. Feel free to use anything here, and if you have your own snippets to offer, check out the site at https://github.com/dylanthelion/personal_node, and submit a pull request. I'll test them, and edit if need be. </p><br><br>
+		<p class="main-text-bold">The one caveat: I'd like to use this for short snippets, with discrete functionalities. There are plenty of tutorial sites out there, but I far more frquently find myself in a a situation, where I've forgotten how to do something basic, or am stuck on a discrete step in the development process. The best thing to do, is generally to consult Google and/or Stack Overflow, but I felt that a repository for the problems I personally see over and over, would expedite things for me, and I hope that it will help others, as well.</p>
+	</div>
+	<div class="col-lg-2 col-lg-offset-5 container main-content">
+		<a href="#"><img src="assets/swift.png" id="img-swift"></a>
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<p class="main-text">
+			Objective-C was one of my first serious languages. Then, while I was still in school, Swift was announced. So, I've been working with it since day 1. Due to my lack of experience, this work included a LOT of Hello World-type apps. That was several years ago, however, and I've developed quite a bit, since.
+		</p><br><br>
+		<p class="main-text">
+			Because of my interests in .NET web development and hosting, my go-to stack has been SQL Server, .NET MVC API, C# web and iOS mobile. I've applied these frameworks to online card games, location-based games, and task management apps.
+		</p><br><br>
+		<p class="main-text">
+			I also have some professional experience under my belt, which of course means working with a broader array of tools and frameworks: Objective-C, Cocoapods, login OAuth frameworks, memory management, design, and testing. You'll likely find less of these in my snippets.
+		</p>
+	</div>
+	<div class="col-lg-2 col-lg-offset-5 container main-content">
+		<a href="#"><img src="assets/csharp.png" id="img-csharp"></a>
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<p class="main-text">
+			C# was my other starting language. I worked on a number of WinForms tickets with a friend of mine, as part of my first professional project, and got a quick leg up. SQL licensing and hosting on AWS is kind of pricey for a starting developer, so I've begun looking at other options, but getting a custom, full-stack app, up and hosted on Azure is still an occasional go-to for me.
+		</p><br><br>
+		<p class="main-text">
+			Most of my work with C# has been building and hosting web APIs, so you'll find a fair amount of snippets related to that, as well as some websocket work. I haven't done enough with the supporting frameworks I've tried (SignalR, Xamarin) to offer anything beyond teh tutorial level.
+		</p>
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<a href="#"><img src="assets/nodejs.png" id="img-nodejs"></a>
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<p class="main-text">
+			I'd be willing to bet that I started working with node JS for the same reason as many other programmers: it's easy. As long as you keep a basic Makefile and/or handful of server and asset files handy, it's pretty much a handful of simple Terminal commands, and you've got a web server going.
+		</p><br><br>
+		<p class="main-text">
+			My professional experience with node is limited to working on a single MEAN stack app, but I've done enough simple projects to have a fair amount of functionality to offer. I've got custom OAuth login apps (sans Passport), apps that serve as interfaces with web APIs in different frameworks, as well as various AWS services and client software.
+		</p>
+	</div>
+	<div class="col-lg-4 col-lg-offset-4 container main-content">
+		<a href="#"><img src="assets/aws.png" id="img-aws"></a>
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<p class="main-text">
+			My two go-to web hosts are AWS and Azure. But whereas Azure is specifically user-friendly and great for hosting MS SQL and .NET apps, AWS offers a much larger breadth of useful services, and has a steeper learning curve. Getting to the point where I can quickly and easily set up a basic web server in EC2, with or without a DB back end, has been a long and useful learning experience, and I hopefully have a few useful snippets to offer.
+		</p>
+	</div>
+	<div class="col-lg-4 col-lg-offset-4 container main-content">
+		<a href="#"><img src="assets/lion2.png" id="img-lion"></a>
+	</div>
+	<div class="col-lg-6 col-lg-offset-3 container main-content">
+		<p class="main-text">
+			That's it! Check out my snippets, or contribute your own. If you'd like to check out the work I have, you can view my <a href="https://github.com/dylanthelion">github profile</a>. If you're viewing this within a few weeks of my initial hosting, there may not be much to see on this site, but there will be more to come. 
+		</p>
+	</div>
+	</div>
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+		<div class="footer-wrapper">
+			<a href="http://www.dylanthelion.com/" target="_blank">
+				<img src="assets/BABYWU.jpg" class="logo">
+			</a>
+			<p>
+				Site built and maintained by dylanthelion
+				<span> | </span>
+				Copyright © 2016 All rights reserved.
+			</p> 
+		</div>
+	</div>
+	</footer>
 </body>
 </html>

@@ -1,0 +1,90 @@
+.navbar-main {
+	/*background-color: transparent;*/
+	background-color: transparent;
+}
+
+#navigation-container {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+#navbar-items li a {
+	color: yellow;
+}
+
+#navbar-items {
+	float: center;
+}
+
+#nav-title {
+	color: yellow;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+}
+
+.scrolled {
+	background-color: black;
+}
+
+.navbar-header {
+	padding-left: 8%;
+}
+
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.banner-image-container {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+}
+
+#banner-image {
+	width: 100%;
+}
+
+.main-content {
+	margin-top: 20px;
+}
+
+.main-text-bold {
+	font-family: Cambria, Georgia, serif;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.main-text {
+	font-family: Cambria, Georgia, serif;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 25px;
+}
+
+.logo {
+	width: 124px;
+	height: 35px;
+	margin-bottom: 10px;
+	background: #FFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+
+.footer-wrapper {
+	text-align: center;
+	padding: 10px 0;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+}

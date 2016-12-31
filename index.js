@@ -2,9 +2,9 @@ var express = require('express');
 var app = express();
 var serverVars_dev = require('./environment/devVars.json');
 var serverVars_prod = require('./environment/prodVars.json');
-app.use(express.static('public'));
+app.use(express.static('build'));
 var http = require('http');
-var htmlPath = "/public/html/";
+var htmlPath = "/build/html/";
 
 app.get('/', function (req, res) {
    res.sendFile( __dirname + htmlPath + "index.html");
