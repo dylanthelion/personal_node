@@ -1,0 +1,19 @@
+{
+  "name": "personal_site",
+  "version": "1.0.0",
+  "description": "Personal site, built on a MEAN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "dylanthelion",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "http": "0.0.0",
+    "mongoose": "^4.7.5"
+  }
+}
