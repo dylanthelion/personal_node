@@ -10,6 +10,10 @@ app.get('/', function (req, res) {
    res.sendFile( __dirname + htmlPath + "index.html");
 })
 
+app.get('/code1', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "nodejs/transforms/npm-init.html");
+})
+
 var server = app.listen(8085, function () {
 
   var host = server.address().address

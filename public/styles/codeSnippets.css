@@ -1,0 +1,41 @@
+.navbar-main {
+	/*background-color: transparent;*/
+	background-color: black;
+	margin-bottom: 20px;
+}
+
+#navbar-items li a {
+	color: yellow;
+}
+
+#navbar-items {
+	float: center;
+}
+
+#nav-title {
+	color: yellow;
+	font-family: 'Brush Script MT', cursive;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+}
+
+.navbar-header {
+	padding-left: 8%;
+}
+
+pre {
+    width: auto!important;
+    padding: 8px 40px!important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+}
+code {
+    font-family: 'Open Sans', Georgia;
+}
+pre.prettyprint.linenums li {
+    list-style-type: decimal-leading-zero;
+}

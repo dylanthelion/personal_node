@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="styles/homepage.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/homepage.js"></script>
+	<script type="text/javascript" src="js/navbar.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/navbar.css">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-main navbar-fixed-top"   id="navigation-container">
@@ -16,7 +17,15 @@
     		</div>
     		<ul class="nav navbar-nav" id="navbar-items">
       			<li class="active"><a href="#">Home</a></li>
-      			<li><a class="nav-link" href="#">Page 1</a></li>
+      			<div class="dropdown pull-right">
+      				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" id="swiftDropdown">Swift<span class="caret"></span></button>
+      				<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="swiftDropdown">
+      					<li role="presentation">
+      						<a href="/code1">Code</a>
+      					</li>
+      					
+      				</ul>
+      			</div>
       			<li><a class="nav-link" href="#">Page 2</a></li>
       			<li><a class="nav-link" href="#">Page 3</a></li>
     		</ul>

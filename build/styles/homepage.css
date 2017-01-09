@@ -1,46 +1,5 @@
-.navbar-main {
-	/*background-color: transparent;*/
-	background-color: transparent;
-}
-
-#navigation-container {
-	padding: 0px;
-	margin: 0px;
-	border: 0px;
-}
-
-#navbar-items li a {
-	color: yellow;
-}
-
-#navbar-items {
-	float: center;
-}
-
-#nav-title {
-	color: yellow;
-	font-family: 'Brush Script MT', cursive;
-	font-size: 24px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26px;
-}
-
 .scrolled {
 	background-color: black;
-}
-
-.navbar-header {
-	padding-left: 8%;
-}
-
-.navbar {
-    -webkit-transition: all 0.6s ease-out;
-    -moz-transition: all 0.6s ease-out;
-    -o-transition: all 0.6s ease-out;
-    -ms-transition: all 0.6s ease-out;
-    transition: all 0.6s ease-out;
 }
 
 .banner-image-container {

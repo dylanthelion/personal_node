@@ -5,3 +5,7 @@ node_modules
 # environment variables
 
 environment
+
+# compiled app
+
+build
