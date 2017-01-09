@@ -14,6 +14,38 @@ app.get('/code1', function(req, res) {
 	res.sendFile(__dirname + htmlPath + "nodejs/transforms/npm-init.html");
 })
 
+app.get('/nodejs', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "nodejs.html");
+})
+
+app.get('/swift', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "swift.html");
+})
+
+app.get('/aws', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "aws.html");
+})
+
+app.get('/csharp', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "csharp.html");
+})
+
+app.get('/nodejs/:name', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "nodejs/transforms/" + req.params.name + ".html");
+})
+
+app.get('/swift/:name', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "swift/transforms/" + req.params.name + ".html");
+})
+
+app.get('/aws/:name', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "aws/transforms/" + req.params.name + ".html");
+})
+
+app.get('/csharp/:name', function(req, res) {
+	res.sendFile(__dirname + htmlPath + "csharp/transforms/" + req.params.name + ".html");
+})
+
 var server = app.listen(8085, function () {
 
   var host = server.address().address
