@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script src="../js/tether.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../styles/bootstrap/bootstrap.css">
+	<% include partials/bootstraplinks %>
 	<link rel="stylesheet" type="text/css" href="../styles/homepage.css">
-	<script type="text/javascript" src="../js/bootstrap.js"></script>
 	<script type="text/javascript" src="../js/navbar.js"></script>
 	<link rel="stylesheet" type="text/css" href="../styles/navbar.css">
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-main navbar-fixed-top"   id="navigation-container">
-  		<div class="container-fluid">
-    		<div class="navbar-header page-scroll" >
-      			<a class="navbar-brand page-scroll" id="nav-title" href="/">Dylan the Lion</a>
-    		</div>
-    		<ul class="nav navbar-nav" id="navbar-items">
-      			<li><a class="nav-link" href="/swift">Swift</a></li>
-      			<li><a class="nav-link" href="/csharp">C# .NET</a></li>
-      			<li><a class="nav-link" href="/aws">AWS</a></li>
-      			<li><a class="nav-link" href="/nodejs">Node JS</a></li>
-    		</ul>
-  		</div>
-	</nav>
+	<% include partials/mainnavbar %>
 	<div class="banner-image-container fill"  >
    		<div class="fill">
 			<img src="assets/BABYWU.jpg" id="banner-image" class="img-responsive">
@@ -87,20 +72,6 @@
 		</p>
 	</div>
 	</div>
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-		<div class="footer-wrapper">
-			<a href="http://www.dylanthelion.com/" target="_blank">
-				<img src="assets/BABYWU.jpg" class="logo">
-			</a>
-			<p>
-				Site built and maintained by dylanthelion
-				<span> | </span>
-				Copyright © 2016 All rights reserved.
-			</p> 
-		</div>
-	</div>
-	</footer>
+	<% include partials/mainfooter %>
 </body>
 </html>

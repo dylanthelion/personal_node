@@ -5,14 +5,14 @@ var del = require('del');
 var path = require('path');
 
 gulp.task('buildhtml', function() {
-	gulp.src('public/html/*.html').pipe(gulp.dest('build/html'));
-	gulp.src('public/html/*/transforms/*.html').pipe(gulp.dest('build/html'));
+	gulp.src('public/html/**/*.ejs').pipe(gulp.dest('build/html'));
+	gulp.src('public/html/*/transforms/*.ejs').pipe(gulp.dest('build/html'));
 });
 
 gulp.task('cleanhtml', function() {
 	return del([
-    	'build/html/**/*.html',
-    	'public/html/*/transforms/*.html'
+    	'build/html/**/*.ejs',
+    	'public/html/*/transforms/*.ejs'
   	]);
 })
 
@@ -49,7 +49,8 @@ gulp.task('cleanassets', function() {
 gulp.task('build', ['buildhtml', 'buildstyles', 'buildscripts', 'buildassets']);
 
 gulp.task('watch', function() {
-	gulp.watch('public/html/*.html', ['buildhtml']);
+	//gulp.watch('public/html/*.html', ['buildhtml']);
+	gulp.watch('public/html/*.ejs', ['buildhtml']);
 });
 
 gulp.task('clean', ['cleanhtml', 'cleanscripts', 'cleanstyles', 'cleanassets']);
@@ -114,7 +115,7 @@ gulp.task('transform', function() {
 
 	var linksTransformer = function(filepath, dirname, indexFilePath) {
 		var fileContent = fs.readFileSync(indexFilePath).toString();
-		var filename = path.basename(filepath).slice(0, -5);
+		var filename = path.basename(filepath).slice(0, -4);
 		var replacedContent = getLinks(fileContent);
 		if (dirname == '') {
 			fileContent = insertNewCode(fileContent, '  ', '<links>', '</links>');
@@ -127,38 +128,38 @@ gulp.task('transform', function() {
 		fs.writeFileSync(indexFilePath, fileContent);
 	}
 
-	linksTransformer('public/html/nodejs.html', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/nodejs.html');
+	linksTransformer('public/html/nodejs.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/nodejs.ejs');
 
-	linksTransformer('public/html/csharp.html', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/csharp.html');
+	linksTransformer('public/html/csharp.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/csharp.ejs');
 
-	linksTransformer('public/html/aws.html', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/aws.html');
+	linksTransformer('public/html/aws.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/aws.ejs');
 
-	linksTransformer('public/html/swift.html', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/swift.html');
+	linksTransformer('public/html/swift.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/swift.ejs');
  
-  gulp.src('public/html/csharp/*.html')
+  gulp.src('public/html/csharp/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'csharp', '/Users/dillion/Desktop/Personal_Site_Node/public/html/csharp.html');
+    	var link = linksTransformer(file.path, 'csharp', '/Users/dillion/Desktop/Personal_Site_Node/public/html/csharp.ejs');
     	var stream = codeTransformer(file.path, '/csharp/');
     	return stream;
     }));
 
-    gulp.src('public/html/swift/*.html')
+    gulp.src('public/html/swift/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'swift', '/Users/dillion/Desktop/Personal_Site_Node/public/html/swift.html');
+    	var link = linksTransformer(file.path, 'swift', '/Users/dillion/Desktop/Personal_Site_Node/public/html/swift.ejs');
     	var stream = codeTransformer(file.path, '/swift/');
     	return stream;
     }));
 
-    gulp.src('public/html/aws/*.html')
+    gulp.src('public/html/aws/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'aws', '/Users/dillion/Desktop/Personal_Site_Node/public/html/aws.html');
+    	var link = linksTransformer(file.path, 'aws', '/Users/dillion/Desktop/Personal_Site_Node/public/html/aws.ejs');
     	var stream = codeTransformer(file.path, '/aws/');
     	return stream;
     }));
 
-    gulp.src('public/html/nodejs/*.html')
+    gulp.src('public/html/nodejs/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'nodejs', '/Users/dillion/Desktop/Personal_Site_Node/public/html/nodejs.html');
+    	var link = linksTransformer(file.path, 'nodejs', '/Users/dillion/Desktop/Personal_Site_Node/public/html/nodejs.ejs');
     	var stream = codeTransformer(file.path, '/nodejs/');
     	return stream;
     }));

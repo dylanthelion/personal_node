@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script src="/js/tether.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="/styles/bootstrap/bootstrap.css">
-	<script type="text/javascript" src="/js/bootstrap.js"></script>
+	<% include ../../partials/bootstraplinks %>
 	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
 	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
 	<title>
@@ -12,19 +9,7 @@
 	</title>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-main"   id="navigation-container">
-  		<div class="container-fluid">
-    		<div class="navbar-header page-scroll" >
-      			<a class="navbar-brand page-scroll" id="nav-title" href="/">Dylan the Lion</a>
-    		</div>
-    		<ul class="nav navbar-nav" id="navbar-items">
-      			<li><a class="nav-link" href="/swift">Swift</a></li>
-      			<li><a class="nav-link" href="/csharp">C# .NET</a></li>
-      			<li><a class="nav-link" href="/aws">AWS</a></li>
-      			<li><a class="nav-link" href="/nodejs">Node JS</a></li>
-    		</ul>
-  		</div>
-	</nav>
+	<% include ../../partials/navbar %>
 	<div class="container">
 		<div class="col-md-10 container">
 			<!-- Enter a description for your code here -->
