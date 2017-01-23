@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		npm-init
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				To start a new node project (once npm and node are installed), enter 'npm init' into your Terminal. After you finish the wizard, a package.json file will be generated. This file will be referenced whenever you build your project. The following is an example of a package.json file.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					{
+			  			"name": "personal_site",
+			 			"version": "1.0.0",
+			  			"description": "Personal site, built on a MEAN stack",
+			  			"main": "index.js",
+			  			"scripts": {
+			    			"test": "test"
+			  			},
+			  			"author": "dylanthelion",
+			  			"license": "ISC"
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

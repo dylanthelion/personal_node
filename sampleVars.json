@@ -1,0 +1,14 @@
+{
+	"instructions" : "All of the key names should be kept. All of the values before 'domain :', should also be kept, as these are the places where my app, as-is, looks for files. domain's value is the app domain; the only thing you need to change is the port number at the end, to whatever port you want to use. The absoluteAppPath's value is the absolute path to the application, and easily acquired in Finder. Just don't forget the slash at the end!",
+	"htmlPath" : "/build/html/",
+	"htmlPathBuild" : "build/html",
+	"htmlPathPublic" : "public/html",
+	"cssPathPublic" : "public/styles",
+	"cssPathBuild" : "build/styles",
+	"scriptsPathPublic" : "public/js",
+	"scriptsPathBuild" : "build/js",
+	"assetsPathPublic" : "public/assets",
+	"assetsPathBuild" : "build/assets",
+	"domain" : "http://localhost:4044/",
+	"absoluteAppPath" : "/Users/MEEEEEEE/Desktop/NODE_APP/"
+}
