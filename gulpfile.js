@@ -4,53 +4,69 @@ var fs = require('fs');
 var del = require('del');
 var path = require('path');
 
+// There does not seem to be any good way to check the env in gulp, which makes sense, because there is no server or environment, yet, necessarily. The options I've found, all involve installing a module that allows you to set a system global and check it, which seems dumber and maybe less secure than having lines like this in a handful of pre-build files.
+
+var serverVars = require('./environment/devVars.json');
+//var serverVars = require('./environment/prodVars.json');*/
+
+// vars loaded from env files. Should be env dependent.
+var publicHtmlPath = serverVars.htmlPathPublic;
+var buildHtmlPath = serverVars.htmlPathBuild;
+var publicStylesPath = serverVars.cssPathPublic;
+var buildStylesPath = serverVars.cssPathBuild;
+var publicScriptsPath = serverVars.scriptsPathPublic;
+var buildScriptsPath = serverVars.scriptsPathBuild;
+var publicAssetsPath = serverVars.assetsPathPublic;
+var buildAssetsPath = serverVars.assetsPathBuild;
+var domain = serverVars.domain;
+var appPath = serverVars.absoluteAppPath;
+
 gulp.task('buildhtml', function() {
-	gulp.src('public/html/**/*.ejs').pipe(gulp.dest('build/html'));
-	gulp.src('public/html/*/transforms/*.ejs').pipe(gulp.dest('build/html'));
+	gulp.src(publicHtmlPath + '/**/*.ejs').pipe(gulp.dest(buildHtmlPath));
+	gulp.src(publicHtmlPath + '/*/transforms/*.ejs').pipe(gulp.dest(buildHtmlPath));
 });
 
 gulp.task('cleanhtml', function() {
 	return del([
-    	'build/html/**/*.ejs',
-    	'public/html/*/transforms/*.ejs'
+    	buildHtmlPath + '/**/*.ejs',
+    	publicHtmlPath + '/*/transforms/*.ejs'
   	]);
 })
 
 gulp.task('buildstyles', function() {
-	gulp.src('public/styles/**/*').pipe(gulp.dest('build/styles'));
+	gulp.src(publicStylesPath + '/**/*').pipe(gulp.dest(buildStylesPath));
 });
 
 gulp.task('cleanstyles', function() {
 	return del([
-    	'build/styles/**/*.css'
+    	buildStylesPath + '/**/*.css'
   	]);
 })
 
 gulp.task('buildscripts', function() {
-	gulp.src('public/js/*').pipe(gulp.dest('build/js'));
+	gulp.src(publicScriptsPath + '/*').pipe(gulp.dest(buildScriptsPath));
 });
 
 gulp.task('cleanscripts', function() {
 	return del([
-    	'build/js/**/*.js'
+    	buildScriptsPath + '/**/*.js'
   	]);
 })
 
 gulp.task('buildassets', function() {
-	gulp.src('public/assets/*').pipe(gulp.dest('build/assets'));
+	gulp.src(publicAssetsPath + '/*').pipe(gulp.dest(buildAssetsPath));
 });
 
 gulp.task('cleanassets', function() {
 	return del([
-    	'build/assets/**/*'
+    	buildAssetsPath + '/**/*'
   	]);
 })
 
 gulp.task('build', ['buildhtml', 'buildstyles', 'buildscripts', 'buildassets']);
 
 gulp.task('watch', function() {
-	//gulp.watch('public/html/*.html', ['buildhtml']);
-	gulp.watch('public/html/*.ejs', ['buildhtml']);
+	gulp.watch(publicHtmlPath + '/*.ejs', ['buildhtml']);
 });
 
 gulp.task('clean', ['cleanhtml', 'cleanscripts', 'cleanstyles', 'cleanassets']);
@@ -98,10 +114,12 @@ function insertInto(string, match, insert) {
 }
 
 function createLink(title, filename, dirname) {
-	return '<a href="http://localhost:8085/' + dirname + '/' + filename + '">' + title + '</a>';
+	return '<a href="' + domain + dirname + '/' + filename + '">' + title + '</a>';
 }
 
 gulp.task('transform', function() {
+	console.log(appPath);
+	console.log(publicHtmlPath);
 	var codeTransformer = function(filename, dirname) {
 		var fileContent = fs.readFileSync(filename).toString();
 		var replacedContent = getCode(fileContent);
@@ -128,38 +146,38 @@ gulp.task('transform', function() {
 		fs.writeFileSync(indexFilePath, fileContent);
 	}
 
-	linksTransformer('public/html/nodejs.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/nodejs.ejs');
+	linksTransformer(publicHtmlPath + '/nodejs.ejs', '', appPath + publicHtmlPath + '/nodejs.ejs');
 
-	linksTransformer('public/html/csharp.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/csharp.ejs');
+	linksTransformer(publicHtmlPath + '/csharp.ejs', '', appPath + publicHtmlPath + '/csharp.ejs');
 
-	linksTransformer('public/html/aws.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/aws.ejs');
+	linksTransformer(publicHtmlPath + '/aws.ejs', '', appPath + publicHtmlPath + '/aws.ejs');
 
-	linksTransformer('public/html/swift.ejs', '', '/Users/dillion/Desktop/Personal_Site_Node/public/html/swift.ejs');
+	linksTransformer(publicHtmlPath + '/swift.ejs', '', appPath + publicHtmlPath + '/swift.ejs');
  
-  gulp.src('public/html/csharp/*.ejs')
+  gulp.src(publicHtmlPath + '/csharp/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'csharp', '/Users/dillion/Desktop/Personal_Site_Node/public/html/csharp.ejs');
+    	var link = linksTransformer(file.path, 'csharp', appPath + publicHtmlPath + '/csharp.ejs');
     	var stream = codeTransformer(file.path, '/csharp/');
     	return stream;
     }));
 
     gulp.src('public/html/swift/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'swift', '/Users/dillion/Desktop/Personal_Site_Node/public/html/swift.ejs');
+    	var link = linksTransformer(file.path, 'swift', appPath + publicHtmlPath + '/swift.ejs');
     	var stream = codeTransformer(file.path, '/swift/');
     	return stream;
     }));
 
     gulp.src('public/html/aws/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'aws', '/Users/dillion/Desktop/Personal_Site_Node/public/html/aws.ejs');
+    	var link = linksTransformer(file.path, 'aws', appPath + publicHtmlPath + '/aws.ejs');
     	var stream = codeTransformer(file.path, '/aws/');
     	return stream;
     }));
 
     gulp.src('public/html/nodejs/*.ejs')
     .pipe(tap(function(file, t) {
-    	var link = linksTransformer(file.path, 'nodejs', '/Users/dillion/Desktop/Personal_Site_Node/public/html/nodejs.ejs');
+    	var link = linksTransformer(file.path, 'nodejs', appPath + publicHtmlPath + '/nodejs.ejs');
     	var stream = codeTransformer(file.path, '/nodejs/');
     	return stream;
     }));
