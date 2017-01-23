@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<title>
+		Install packages with npm
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<p>
+				Once you have a node project created and want to install packages from Terminal/CMD, use this command to download the module into your node_modules dir, as well as add the dependency to your package.json (the --save-dev flag does this; --save saves it to your production dependencies).
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<code>
+					npm install my-node-module --save --save-dev
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

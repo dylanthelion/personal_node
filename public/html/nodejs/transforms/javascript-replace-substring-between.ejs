@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Replace substring between two unique strings with Javascript
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				This is a bit of an edge case. I needed to replace the contents of an HTML node for this app. Generally, you'd waid until the DOM is loaded and do that, but I couldn't. So, I made sure that the node name was unique, and used Javascript to match the strings. The following function takes a string (the read document) and a second string (the content to insert), and returns the altered document content.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					function replaceNodeContent(oldCode, transformedCode) {
+						var first = &quot;&lt;myNode&gt;&quot;;
+						var second = &quot;&lt;&#x2F;myNode&gt;&quot;
+						var parts = oldCode.split(first);
+						var parts2 = parts[1].split(second);
+						parts2[0] = transformedCode;
+						return [parts[0], parts2.join(second)].join(first);
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

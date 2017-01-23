@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Running a task with gulp
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				Once you have a task defined in your gulpfile.js, you can use the gulp command from the same directory (assuming gulp is installed globally). By default, gulp looks for a task named 'default'. But if you have a task named 'myTask', you can use the following command.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					gulp myTask
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

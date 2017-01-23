@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Start a git repo
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				To start a git repository with a tracked remote repository, first create a new project on github. Copy the URL in your browser, while inside of teh empty project, and enter it in place of the 'my-URL' in the following commands. Also, make sure that you have a .gitignore ready and saved before the 'git add'. Finally, be aware that this will create master and develop branches both locally and remotely; it's a good idea to create other branches to continue your work from.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					git init
+					git add .
+					git commit -m "Initial"
+					git remote add origin <url>
+					git push -u origin --all
+					git checkout -b develop
+					git push origin develop
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

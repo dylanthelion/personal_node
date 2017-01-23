@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Transform a file with gulp-tap
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				You can use the gulp-tap module to transform files during piping in your gulpfile.js. I use it to allow people to enter code into these templated HTML pages, without worrying about escaping reserved characters. The following takes all .ejs files in the html directory, and replaces the content with "Hello World".
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					gulp.task('transform', function() {
+						var codeTransformer = function(filename) {
+							var fileContent = fs.readFileSync(filename).toString();
+							fs.truncateSync(filename, 0);
+							fs.appendFileSync(filename, "Hello world");
+						}
+					 
+					  	gulp.src('public/html/*.ejs')
+					    .pipe(tap(function(file, t) {
+					    	var stream = codeTransformer(file.path);
+	    					return stream;
+					    }));
+					});
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

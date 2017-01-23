@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Express routing with Jade
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				By default, the jade (ejs) module looks in the 'views' folder for views and partials. Use the following code to have it look in the build/html directory, instead.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					var htmlPath = "/build/html/";
+					app.set('view engine', 'ejs');
+					app.set('views', path.join(__dirname, htmlPath));
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

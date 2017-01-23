@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Escape reserved characters in an html document
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				I forget where I got this, but it's an elegant way to convert reserved HTML characters into their respective literals. Feed a string to the escapeHtml function.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					var escapeCharsMap = {
+					  "&": "&amp;",
+					  "<": "&lt;",
+					  ">": "&gt;",
+					  '"': '&quot;',
+					  "'": '&#39;',
+					  "/": '&#x2F;'
+					};
+
+					function escapeHtml(string) {
+					  return String(string).replace(/[&<>"'\/]/g, function (key) {
+					    return escapeCharsMap[key];
+					  });
+					}
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

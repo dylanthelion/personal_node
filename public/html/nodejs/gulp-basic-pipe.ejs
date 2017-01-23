@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Basic gulp piping
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				Once you have gulp installed globally, and in a project, you'll want to do some basic piping. This is where you take the pages, assets, etc..., from your building area, into the directories you'll be serving pages from. The following simple gulpfile.js, will use the command 'gulp build', to move your html files from a 'public' dir to a 'build' dir.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					var gulp   = require('gulp');
+
+					gulp.task('buildhtml', function() {
+						gulp.src('public/html/*').pipe(gulp.dest('build/html'));
+					});
+
+					gulp.task('build', ['buildhtml']);
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

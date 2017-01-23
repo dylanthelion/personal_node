@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Partials with jade
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				Maybe the most useful part of the jade (ejs) module is partials, which allow you to reuse repeated html code. The following code, part of a .ejs doc, looks for a bootstraplinks.ejs file in the partials directory (paths are relative to the .ejs file, not the server), and injects its contents into the document.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					<% include partials/bootstraplinks %>
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

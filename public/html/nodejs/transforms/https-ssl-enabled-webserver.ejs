@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Create an SSL-enabled web server with https
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				The following is a simple example of a nodejs server, which has been SSL-enabled with the https module. The values in the 'options' object are the relative path to your key, the relative path to your cert, and the passphrase for both (if any).
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					var express = require(&#39;express&#39;);
+					var app = express();
+					var https = require(&#39;https&#39;);
+					var fs = require(&#39;fs&#39;);
+
+					var options = {
+					   key  : fs.readFileSync(&#39;server.key&#39;),
+					   cert : fs.readFileSync(&#39;server.crt&#39;),
+					   passphrase : &#39;yourpassphrase&#39;
+					};
+
+					app.get(&#39;&#x2F;&#39;, function (req, res) {
+					   res.send(&#39;Hello World!&#39;);
+					});
+
+					https.createServer(options, app).listen(8085, function () {
+					   console.log(&#39;Started!&#39;);
+					});
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Example node server
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				A node app requires a server in a Javascript file, to, well, serve pages. The following is a simple example, using express. Served pages are in the public/html directory, and assets are pulled from the public directory.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					var express = require(&#39;express&#39;);
+					var app = express();
+					app.use(express.static(&#39;public&#39;));
+					var htmlPath = &quot;&#x2F;public&#x2F;html&#x2F;&quot;;
+
+					app.get(&#39;&#x2F;&#39;, function (req, res) {
+				   		res.sendFile( __dirname + htmlPath + &quot;index.html&quot;);
+					})
+
+					var server = app.listen(8085, function () {
+
+				  		var host = server.address().address
+				  		var port = server.address().port
+
+				  		console.log(&quot;Site is running at http:&#x2F;&#x2F;%s:%s&quot;, host, port)
+
+					})
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

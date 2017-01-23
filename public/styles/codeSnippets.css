@@ -39,3 +39,7 @@ code {
 pre.prettyprint.linenums li {
     list-style-type: decimal-leading-zero;
 }
+
+links a {
+	display: block;
+}

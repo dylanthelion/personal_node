@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../../partials/bootstraplinks %>
+	<link rel="stylesheet" type="text/css" href="/styles/codeSnippets.css">
+	<!-- Standard snippet title. This will show up as the anchor text to this snippet, so please customize -->
+	<title>
+		Serving routes with parameters, with express and jade
+	</title>
+</head>
+<body>
+	<% include ../../partials/navbar %>
+	<div class="container">
+		<div class="col-md-10 container">
+			<!-- Enter a description for your code here -->
+			<p>
+				You'll probably want to serve more than straight pages from a views folder with jade(ejs) and express. The following code tells ejs to look in the build/html folder, and the second app.get takes a parameter, and uses it to find the file to serve.
+			</p>
+		</div>
+		<div class="col-lg-6 container">
+			<pre class="prettyprint linenums">
+				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
+				<code>
+					var htmlPath = "/build/html/";
+					app.set('view engine', 'ejs');
+					app.set('views', path.join(__dirname, htmlPath));
+
+					app.get('/', function (req, res) {
+					   res.render('index');
+					})
+					app.get('/nodejs/:name', function(req, res) {
+						res.render("nodejs/transforms/" + req.params.name);
+					})
+				</code>
+			</pre>
+		</div>
+	</div>
+</body>
+</html>
