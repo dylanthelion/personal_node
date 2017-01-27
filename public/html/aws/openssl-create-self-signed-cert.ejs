@@ -11,13 +11,13 @@
 <body>
 	<% include ../../partials/navbar %>
 	<div class="container">
-		<div class="col-md-10 container">
+		<div class="col-md-10 container container-top">
 			<!-- Enter a description for your code here -->
 			<p>
 				If building an SSL-enabled web server, you'll probably be using a self-signed cert. The following commands will give you a key(.key or .pem), certificate chain(.csr), and the cert(.crt).<br><br>Things to note: <br>You don't have to name all files the same, though the extension names are important, for decryption.<br>After step 2, you'll be prompted for info. The important one is "Common Name", which should be the name of your domain or local server. "localhost" will likely do for most self-signed certs.<br>A self-signed cert will do for a dev environment, but pay a certificate authority for your production cert.<br> You can enter any number of days you want in steps 3 and 4; this is the lifetime of your certificate.
 			</p>
 		</div>
-		<div class="col-lg-6 container">
+		<div class="col-lg-10 container">
 			<pre class="prettyprint linenums">
 				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
 				<code>
