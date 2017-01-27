@@ -17,8 +17,7 @@
 				You can use the gulp-tap module to transform files during piping in your gulpfile.js. I use it to allow people to enter code into these templated HTML pages, without worrying about escaping reserved characters. The following takes all .ejs files in the html directory, and replaces the content with "Hello World".
 			</p>
 		</div>
-		<div class="col-lg-10 container">
-			<pre class="prettyprint linenums">
+		<% include ../../partials/snippetWrapper %>
 				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
 				<code>
 					gulp.task('transform', function() {

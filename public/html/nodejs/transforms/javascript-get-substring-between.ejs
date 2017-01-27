@@ -17,8 +17,7 @@
 				This is a bit of an edge case. I needed to access the contents of an HTML node for this app. Generally, you'd waid until the DOM is loaded and do that, but I couldn't. So, I made sure that the node name was unique, and used Javascript to match the strings. The following function takes a string (the read document), and returns the match.
 			</p>
 		</div>
-		<div class="col-lg-10 container">
-			<pre class="prettyprint linenums">
+		<% include ../../partials/snippetWrapper %>
 				<!-- Place your code here. The pre tag preserves whitespace, linebreaks, etc..., so make it pretty! -->
 				<code>
 					function getNodeContent(code) {
