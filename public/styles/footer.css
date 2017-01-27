@@ -1,0 +1,22 @@
+.logo {
+	width: 124px;
+	height: auto;
+	margin-bottom: 10px;
+	background: #FFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+
+.footer-wrapper {
+	text-align: center;
+	padding: 10px 0;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+footer {
+	clear: both;
+}
+
+body {
+	padding-bottom: 200px;
+}
