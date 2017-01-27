@@ -37,3 +37,9 @@
 	width: 80%;
 	height: auto;
 }
+
+.image-logo {
+	width: 80%;
+	height: auto;
+	float: center;
+}
