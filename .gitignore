@@ -9,3 +9,10 @@ environment
 # compiled app
 
 build
+
+# certs
+
+*.crt
+*.key
+*.csr
+*.pem
