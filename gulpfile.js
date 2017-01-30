@@ -114,6 +114,7 @@ function insertInto(string, match, insert) {
 }
 
 function createLink(title, filename, dirname) {
+	console.log(domain);
 	return '<a href="' + domain + dirname + '/' + filename + '">' + title + '</a>';
 }
 

@@ -9,6 +9,6 @@
 	"scriptsPathBuild" : "build/js",
 	"assetsPathPublic" : "public/assets",
 	"assetsPathBuild" : "build/assets",
-	"domain" : "http://localhost:4044/",
+	"domain" : "https://localhost:4044/",
 	"absoluteAppPath" : "/Users/MEEEEEEE/Desktop/NODE_APP/"
 }
