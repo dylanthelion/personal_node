@@ -36,12 +36,16 @@ Finally, start the app with 'PORT=4040 NODE_ENV=dev node index.js'. You can alte
 
 Adding a snippet is pretty easy, once the app is running: 
 	
-	- Create a .ejs file in the public/whatever-language dir. You can copy the sample.ejs file in the root dir, or create a new file, and copy teh contents of sample.ejs.
+	- Create a .ejs file in the public/whatever-language dir. You can copy the sample.ejs file in the root dir, or create a new file, and copy the contents of sample.ejs. Consult the naming conventions below.
 	- Add a title. The title will be the name of your created link, so make it concise and descriptive.
 	- Add a description to the empty p tag under the comment telling you to add a description
 	- Add your code to the code tag. The gulp transform step will take care of special characters, but do keep in mind that the pre tag preserves whitespace and linebreaks, so keep your code pretty!
-	- Follow the instructions under 'Start the app'. You should see a link for your new page in the index page for your chosen language.
-	- Assuming everything works, push your branch to github and send me a PR. I'll check it out and add it as soon as I have time, and add you as a contributor.
+	- Follow the instructions under 'Start the app'. You should see a link for your new page in the index page for your chosen language. Alternatively, you can skip this step.
+	- Assuming everything works, push your branch to github (after requesting contributor status) and send me a PR. I'll check it out and add it as soon as I have time, and add you as a contributor.
+
+## Naming Conventions
+
+Please take care when naming new snippet .ejs files, as the name will determine what order the snippets are listed in, and I'd like to keep similar snippets bunched together. First, decide what the specific focus of the snippet is (git, http, linux, or something similar). Next, check the public/html/(your language) dir, to see whether there are already snippets for that topic. If there are, use the prefix that is already being used. If not, use the focus as the prefix, and delimit the rest of the filename with dashes. Here is an example: jade-express-routing.ejs
 
 ## Contributors
 
